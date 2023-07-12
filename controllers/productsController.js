@@ -1,7 +1,6 @@
 import { productosServicios } from "../servicios/productos-servicios.js";
 
 export const nuevoProducto = (name, price, imageUrl, id) => {
-  console.log(id);
   const contenido = `
             <div class="product__card__imgContainer">
                 <img class="product__card__img" src = "${imageUrl}" alt = "imagen_del_producto">
@@ -42,6 +41,7 @@ export const nuevoProducto = (name, price, imageUrl, id) => {
 const productos = document.querySelector("[data-starWarsCategory]");
 const productos2 = document.querySelector("[data-consolasCategoria]");
 const productos3 = document.querySelector("[data-diversosCategoria]");
+const consoleProduct = document.querySelector("[data-allConsolas]");
 const adminProducts = document.querySelector("[data-adminProducts]");
 
 const render = async () => {
@@ -65,38 +65,59 @@ const render = async () => {
       productos.innerHTML = "";
       allProducts
         .filter((product) => product.categoria === "StarWars")
-        .forEach((elemento) => {
-          productos.appendChild(
-            nuevoProducto(
-              elemento.name,
-              elemento.price,
-              elemento.imageUrl,
-              elemento.id
-            )
-          );
+        .forEach((elemento, index) => {
+          if (index < 6) {
+            productos.appendChild(
+              nuevoProducto(
+                elemento.name,
+                elemento.price,
+                elemento.imageUrl,
+                elemento.id
+              )
+            );
+          }
         });
     }
     if (productos2) {
       productos2.innerHTML = "";
       allProducts
         .filter((product) => product.categoria === "Consolas")
-        .forEach((elemento) => {
-          productos2.appendChild(
-            nuevoProducto(
-              elemento.name,
-              elemento.price,
-              elemento.imageUrl,
-              elemento.id
-            )
-          );
+        .forEach((elemento, index) => {
+          if (index < 6) {
+            productos2.appendChild(
+              nuevoProducto(
+                elemento.name,
+                elemento.price,
+                elemento.imageUrl,
+                elemento.id
+              )
+            );
+          }
         });
     }
     if (productos3) {
       productos3.innerHTML = "";
       allProducts
         .filter((product) => product.categoria === "Diversos")
+        .forEach((elemento, index) => {
+          if (index < 6) {
+            productos3.appendChild(
+              nuevoProducto(
+                elemento.name,
+                elemento.price,
+                elemento.imageUrl,
+                elemento.id
+              )
+            );
+          }
+        });
+    }
+    if (consoleProduct) {
+      consoleProduct.innerHTML = "";
+      allProducts
+        .filter((product) => product.categoria === "Consolas")
         .forEach((elemento) => {
-          productos3.appendChild(
+          consoleProduct.appendChild(
             nuevoProducto(
               elemento.name,
               elemento.price,
