@@ -25,32 +25,38 @@
   <body>
     <header class="header__container">
       <div class="header__items">
-        <a class="header__logoHome" href="#">
-          <img
-            alt="logo"
-            class="header__logoHome-image"
-            src="assets/img/logo.svg"
-          />
-        </a>
-        <div class="header__search" id="search__container">
-          <input
-            class="header__search-input"
-            id="search__items"
-            placeholder=" Qué desea buscar ?"
-            type="text"
-          />
-          <button class="header__search-button" id="search__action">
+        <div class="header__logoHome">
+          <a href="#">
             <img
-              alt=""
-              class="header__search-icon"
-              src="assets/img/header/search.svg"
+              alt="logo"
+              class="header__logoHome-image"
+              src="assets/img/logo.svg"
             />
-          </button>
+          </a>
+        </div>
+        <div class="header__menu">
+          <div class="header__redirectCont">
+            <a class="header__redirect" href="screens/login.html">
+              <button class="header__redirect-button">Login</button>
+            </a>
+          </div>
+          <div class="header__search" id="search__container">
+            <input
+              class="header__search-input"
+              id="search__items"
+              placeholder=" Qué desea buscar ?"
+              type="text"
+            />
+            <button class="header__search-button" id="search__action">
+              <img
+                alt=""
+                class="header__search-icon"
+                src="assets/img/header/search.svg"
+              />
+            </button>
+          </div>
         </div>
       </div>
-      <a class="header__login" href="screens/login.html">
-        <button class="header__login-button">Login</button>
-      </a>
     </header>
     <main>
       <section class="banner">

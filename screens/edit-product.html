@@ -27,22 +27,29 @@
             />
           </a>
         </div>
-        <div class="header__search">
-          <input
-            class="header__search-input"
-            id="search__items"
-            placeholder=" Qué desea buscar ?"
-            type="text"
-          />
-          <button class="header__search-button">
-            <label for="search__items" class="label--active">
+        <div class="header__menu">
+          <div class="header__redirectCont">
+            <a class="header__redirect" href="screens/login.html">
+              <button class="header__redirect-button">
+                Menu Administracion
+              </button>
+            </a>
+          </div>
+          <div class="header__search" id="search__container">
+            <input
+              class="header__search-input"
+              id="search__items"
+              placeholder=" Qué desea buscar ?"
+              type="text"
+            />
+            <button class="header__search-button" id="search__action">
               <img
-                alt="button"
+                alt=""
                 class="header__search-icon"
                 src="../assets/img/header/search.svg"
               />
-            </label>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </header>
