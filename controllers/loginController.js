@@ -11,7 +11,7 @@ form.addEventListener("submit", async (e) => {
 
   if (user) {
     console.log("we have this user in the database");
-    window.location.href = "../screens/adminProducts.html";
+    window.location.href = "../screens/allProducts.html";
   } else {
     console.log("email or password - wrong or user not found");
     swal.fire({
@@ -24,7 +24,9 @@ form.addEventListener("submit", async (e) => {
 });
 
 async function getUsers() {
-  const response = await fetch("http://localhost:3000/users/");
+  const response = await fetch(
+    "https://64b5c351f3dbab5a95c7a487.mockapi.io/users"
+  );
   return await response.json();
 }
 
