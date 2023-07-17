@@ -1,8 +1,10 @@
 const listaUsuarios = () =>
-  fetch("http://localhost:3000/users").then((respuesta) => respuesta.json());
+  fetch("https://64b5c351f3dbab5a95c7a487.mockapi.io/users").then((respuesta) =>
+    respuesta.json()
+  );
 
 const crearUsuario = (name, email, password) => {
-  return fetch("http://localhost:3000/users", {
+  return fetch("https://64b5c351f3dbab5a95c7a487.mockapi.io/users", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,17 +24,19 @@ const crearUsuario = (name, email, password) => {
 };
 
 const detalleUsuario = (id) => {
-  return fetch(`http://localhost:3000/users/${id}`).then((resp) => resp.json());
+  return fetch(`https://64b5c351f3dbab5a95c7a487.mockapi.io/users/${id}`).then(
+    (resp) => resp.json()
+  );
 };
 
 const deleteUser = (id) => {
-  return fetch(`http://localhost:3000/users/${id}`, {
+  return fetch(`https://64b5c351f3dbab5a95c7a487.mockapi.io/users/${id}`, {
     method: "DELETE",
   });
 };
 
 const updateUsuario = (name, email, password, id) => {
-  return fetch(`http://localhost:3000/users/${id}`, {
+  return fetch(`https://64b5c351f3dbab5a95c7a487.mockapi.io/users/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
