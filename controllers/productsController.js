@@ -6,10 +6,10 @@ export const nuevoProducto = (name, price, imageUrl, id) => {
                 <img class="product__card__img" src = "${imageUrl}" alt = "imagen_del_producto">
                   <div class="product__card-edit hidden ">
                     <button class="product__card__btnDelete" type="button">
-                      <img src="../assets/img/icons/delete.svg" alt="delete_icon" class="iconEdit" data-delete>
+                      <img src="./assets/img/icons/delete.svg" alt="delete_icon" class="iconEdit" data-delete>
                     </button>
                     <a href="../screens/edit-product.html?id=${id}">
-                      <img src="../assets/img/icons/edit.svg" alt="edition_icon" class="iconEdit" data-edit>
+                      <img src="./assets/img/icons/edit.svg" alt="edition_icon" class="iconEdit" data-edit>
                     </a>
                   </div>
             </div>
