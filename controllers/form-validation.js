@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   datos.addEventListener("submit", validarFormulario);
 });
 
-function validarFormulario(event) {
-  event.preventDefault();
-
+function validarFormulario() {
   let nombre = form__name.value;
   if (nombre.length > 40) {
     Swal.fire({

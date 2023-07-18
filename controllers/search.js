@@ -3,8 +3,6 @@ const search = document.getElementById("search__items");
 const action = document.getElementById("search__action");
 const label = document.querySelector(".label--active");
 
-console.log("Search elements:", container, search, action);
-
 let products = [];
 
 setInterval(() => {
@@ -18,8 +16,6 @@ const update = () => {
     const name = (product.getAttribute("data-product") || "")
       .toLowerCase()
       .trim();
-
-    console.log("Search value and product", { value, name });
 
     product.style.display =
       !value || !name || name.includes(value) ? "flex" : "none";
