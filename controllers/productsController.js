@@ -6,10 +6,10 @@ export const nuevoProducto = (name, price, imageUrl, id) => {
                 <img class="product__card__img" src = "${imageUrl}" alt = "imagen_del_producto">
                   <div class="product__card-edit hidden ">
                     <button class="product__card__btnDelete" type="button">
-                      <img src="../assets/img/icons/delete.svg" alt="dlt_icon" class="iconEdit" data-delete>
+                      <img src="https://res.cloudinary.com/dqxk1p1vp/image/upload/v1689639058/E-comerce-products/icons/delete_mqfr3d.svg" alt="dlt_icon" class="iconEdit" data-delete>
                     </button>
                     <a href="../screens/edit-product.html?id=${id}">
-                      <img src="../assets/img/icons/edit.svg" alt="edit_icon" class="iconEdit" data-edit>
+                      <img src="https://res.cloudinary.com/dqxk1p1vp/image/upload/v1689639047/E-comerce-products/icons/edit_uhh75j.svg" alt="edit_icon" class="iconEdit" data-edit>
                     </a>
                   </div>
             </div>
