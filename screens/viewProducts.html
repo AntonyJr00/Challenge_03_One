@@ -8,29 +8,31 @@
     />
     <meta content="width=device-width initial-scale=1.0" name="viewport" />
     <title>product__details</title>
-    <link href="/assets/css/normalize.css" rel="stylesheet" />
-    <link href="/assets/css/reset.css" rel="stylesheet" />
-    <link href="/assets/css/variables.css" rel="stylesheet" />
-    <link href="/assets/css/header.css" rel="stylesheet" />
-    <link href="/assets/css/footer.css" rel="stylesheet" />
-    <link href="/assets/css/admin-products/products.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/variables.css" />
+    <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
     <link
-      href="/assets/css/admin-products/product__details.css"
       rel="stylesheet"
+      href="../assets/css/admin-products/product__details.css"
+    />
+    <link href="../assets/css/admin-products/products.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="../assets/css/admin-products/cards-product.css"
     />
   </head>
   <body>
     <header class="header__container">
       <div class="header__items">
-        <div class="header__logoHome">
-          <a href="../index.html">
-            <img
-              alt="logo"
-              class="header__logoHome-image"
-              src="../assets/img/logo.svg"
-            />
-          </a>
-        </div>
+        <a class="header__logoHome" href="../index.html">
+          <img
+            alt="logo"
+            class="header__logoHome-image"
+            src="../assets/img/logo.svg"
+          />
+        </a>
         <div class="header__search">
           <input
             class="header__search-input"
@@ -39,30 +41,34 @@
             type="text"
           />
           <button class="header__search-button">
-            <label for="search__items" class="label--active">
-              <img
-                alt="button"
-                class="header__search-icon"
-                src="../assets/img/header/search.svg"
-              />
-            </label>
+            <img
+              alt=""
+              class="header__search-icon"
+              src="../assets/img/header/search.svg"
+            />
           </button>
         </div>
       </div>
+
+      <a class="header__login" href="login.html">
+        <button class="header__login-button">Login</button>
+      </a>
     </header>
     <main>
-      <section class="detail-container">
-        <div class="details-product">
-          <img
-            alt="imagen"
-            class="details-img"
-            data-img
-            src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png"
-          />
-          <div class="details-info">
-            <h2 class="details-name" data-name>vaso</h2>
-            <p class="details-price" data-price>$00.00</p>
-            <p class="details-descripcion" data-descripcion>
+      <section class="detail__container">
+        <div class="details__product">
+          <div class="details__img-cont">
+            <img
+              alt="imagen"
+              class="details__img"
+              data-img
+              src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png"
+            />
+          </div>
+          <div class="details__info">
+            <h2 class="details__name" data-name>vaso</h2>
+            <p class="details__price" data-price>$00.00</p>
+            <p class="details__descripcion" data-descripcion>
               Descripción del producto:
             </p>
           </div>
@@ -70,8 +76,12 @@
       </section>
 
       <section class="products">
-        <h2 class="product__title">Productos Similares</h2>
-        <div class="product__list" data-products></div>
+        <div class="product__container">
+          <div class="product__header">
+            <h2 class="product__title">Productos Similares</h2>
+          </div>
+          <div class="product__list" data-products></div>
+        </div>
       </section>
     </main>
     <footer>
@@ -169,7 +179,8 @@
         </div>
       </div>
     </footer>
-
     <script src="../controllers/viewProduct.js" type="module"></script>
+    <script src="../controllers/form-validation.js"></script>
+    <script src="../controllers/search.js"></script>
   </body>
 </html>
