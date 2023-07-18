@@ -1,8 +1,8 @@
-import {userServicios} from "../servicios/user-service.js";
+import { userServicios } from "../servicios/user-service.js";
 
 const nuevoUsuario = (name, email, password, id) => {
-    const addUser = document.createElement("tr");
-    addUser.innerHTML = `
+  const addUser = document.createElement("tr");
+  addUser.innerHTML = `
         <td class="td">${name}</td>
         <td>${email}</td>
         <td>${password}</td>
@@ -21,35 +21,43 @@ const nuevoUsuario = (name, email, password, id) => {
           </ul>
        </td>`;
 
-    const deleteBtn = addUser.querySelector('[data-deleteUser]');
-    deleteBtn.addEventListener('click', () => {
-        if (id) {
-            userServicios.deleteUser(id)
-                .then((id) => {
-                    console.log(id)
-                    render();
-                })
-                .catch((err) => console.error("hubo un error", err))
-        }
-    });
+  const deleteBtn = addUser.querySelector("[data-deleteUser]");
+  deleteBtn.addEventListener("click", () => {
+    if (id) {
+      userServicios
+        .deleteUser(id)
+        .then((id) => {
+          console.log(id);
+          render();
+        })
+        .catch((err) => console.error("hubo un error", err));
+    }
+  });
 
-    return addUser;
+  return addUser;
 };
 
-const user = document.querySelector('[data-table]');
+const user = document.querySelector("[data-table]");
 
 const render = async () => {
-    try {
-        const listaUsuarios = await userServicios.listaUsuarios()
-        if (user) {
-            user.innerHTML = '';
-            listaUsuarios.forEach((elemento) => {
-                user.appendChild(nuevoUsuario(elemento.name, elemento.email, elemento.password, elemento.id))
-            });
-        }
-    } catch (error) {
-        console.error('Hubo un error', error)
+  try {
+    const listaUsuarios = await userServicios.listaUsuarios();
+    if (user) {
+      user.innerHTML = "";
+      listaUsuarios.forEach((elemento) => {
+        user.appendChild(
+          nuevoUsuario(
+            elemento.name,
+            elemento.email,
+            elemento.password,
+            elemento.id
+          )
+        );
+      });
     }
-}
+  } catch (error) {
+    console.error("Hubo un error", error);
+  }
+};
 
 render();
