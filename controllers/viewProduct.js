@@ -9,7 +9,8 @@ const descProduct = document.querySelector("[data-descripcion]");
 const url = new URL(window.location);
 const id = url.searchParams.get("id");
 
-const getInfo = async (id) => {
+const getInfo = async (id, screenWidth = undefined) => {
+  console.log(screenWidth);
   try {
     const product = await productosServicios.detalleProducto(id);
 
@@ -24,15 +25,27 @@ const getInfo = async (id) => {
     allProducts.innerHTML = "";
     products
       .filter((p) => p.categoria === product.categoria)
-      .forEach((elemento) => {
-        allProducts.appendChild(
-          nuevoProducto(
-            elemento.name,
-            elemento.price,
-            elemento.imageUrl,
-            elemento.id
-          )
-        );
+      .forEach((elemento, index) => {
+        if (screenWidth < 768) {
+          if (index < 4)
+            allProducts.appendChild(
+              nuevoProducto(
+                elemento.name,
+                elemento.price,
+                elemento.imageUrl,
+                elemento.id
+              )
+            );
+        } else {
+          allProducts.appendChild(
+            nuevoProducto(
+              elemento.name,
+              elemento.price,
+              elemento.imageUrl,
+              elemento.id
+            )
+          );
+        }
       });
   } catch (error) {
     console.error("Hubo un Error", error);
@@ -40,5 +53,13 @@ const getInfo = async (id) => {
 };
 
 if (id) {
-  getInfo(id);
+  const screenWidth = window.innerWidth;
+  getInfo(id, screenWidth);
 }
+
+window.addEventListener("resize", () => {
+  const screenWidth = window.innerWidth;
+  if (id) {
+    getInfo(id, screenWidth);
+  }
+});
