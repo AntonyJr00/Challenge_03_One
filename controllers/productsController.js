@@ -38,6 +38,32 @@ export const nuevoProducto = (name, price, imageUrl, id) => {
   return card;
 };
 
+//para el index--------------------------------------------
+//--------------------------------------------
+
+const shownuevoProducto = (name, price, imageUrl, id) => {
+  const contenido = `
+            <div class="product__card__imgContainer">
+                <img class="product__card__img" src = "${imageUrl}" alt = "imagen_del_producto">
+            </div>
+            <div class="product__card__info">
+                <p class="product__card__title">${name}</p>
+                <p class="product__card__price">${price}</p>
+                <a href="./screens/viewProducts.html?id=${id}" class="product__card__boton" data-verProducto> #verproducto </a>
+            </div>
+    `;
+
+  const card = document.createElement("div");
+  card.setAttribute("data-product", name);
+  card.innerHTML = contenido;
+  card.classList.add("product__card");
+
+  return card;
+};
+
+//--------------------------------------------
+//para el index--------------------------------------------
+
 const productos = document.querySelector("[data-starWarsCategory]");
 const productos2 = document.querySelector("[data-consolasCategoria]");
 const productos3 = document.querySelector("[data-diversosCategoria]");
@@ -68,7 +94,7 @@ const render = async () => {
         .forEach((elemento, index) => {
           if (index < 6) {
             productos.appendChild(
-              nuevoProducto(
+              shownuevoProducto(
                 elemento.name,
                 elemento.price,
                 elemento.imageUrl,
@@ -85,7 +111,7 @@ const render = async () => {
         .forEach((elemento, index) => {
           if (index < 6) {
             productos2.appendChild(
-              nuevoProducto(
+              shownuevoProducto(
                 elemento.name,
                 elemento.price,
                 elemento.imageUrl,
@@ -102,7 +128,7 @@ const render = async () => {
         .forEach((elemento, index) => {
           if (index < 6) {
             productos3.appendChild(
-              nuevoProducto(
+              shownuevoProducto(
                 elemento.name,
                 elemento.price,
                 elemento.imageUrl,
